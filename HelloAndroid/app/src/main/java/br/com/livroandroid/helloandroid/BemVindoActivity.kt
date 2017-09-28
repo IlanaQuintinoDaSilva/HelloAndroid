@@ -18,7 +18,7 @@ class BemVindoActivity : DebugActivity() {
         val nome = args.getString("nome")
         textview.text = "$nome, seja bem vindo."
         //Ativa o "up navigation" na action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

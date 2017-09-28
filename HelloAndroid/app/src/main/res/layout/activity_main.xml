@@ -4,6 +4,8 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="vertical">
+    <!-- Toolbar -->
+    <include layout="@layout/toolbar"/>
     <!-- Label do login -->
     <LinearLayout
         android:layout_width="match_parent"

@@ -22,6 +22,10 @@ class MainActivity : DebugActivity() {
         //View
         setContentView(R.layout.activity_main)
 
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Olá Action Bar"
+
         val btLogin = findViewById<Button>(R.id.btLogin)
         //Adiciona o evento no botão de login
         onClick(R.id.btLogin){onClickLogin()}
