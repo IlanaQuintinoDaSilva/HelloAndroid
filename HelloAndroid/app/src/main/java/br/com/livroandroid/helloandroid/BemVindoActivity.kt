@@ -39,6 +39,7 @@ class BemVindoActivity : DebugActivity() {
         onClick(R.id.btFrameLayoutProgressBar){onClickFrameLayoutProgressBar()}
         onClick(R.id.btExTableLayout){onClickExTableLayout()}
         onClick(R.id.btExReLayout){onClickExRelativeLayout()}
+        onClick(R.id.btLinearLayoutLoginAninhado){onClickLinearLayoutLoginAninhado()}
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -72,6 +73,11 @@ class BemVindoActivity : DebugActivity() {
 
     fun onClickExRelativeLayout(){
         val intent = Intent(context, ExemploRelativeLayoutActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickLinearLayoutLoginAninhado(){
+        val intent = Intent(context, LinearLayoutLoginAninhadoActivity::class.java)
         startActivity(intent)
     }
 }
