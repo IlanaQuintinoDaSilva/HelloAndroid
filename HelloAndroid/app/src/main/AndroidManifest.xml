@@ -20,7 +20,8 @@
         <activity android:name=".BemVindoActivity" />
         <activity android:name=".ExemploLinearLayoutPesoActivity" />
         <activity android:name=".ExemploLinearLayoutPeso2Activity" />
-        <activity android:name=".FrameLayoutProgressBarActivity"></activity>
+        <activity android:name=".FrameLayoutProgressBarActivity" />
+        <activity android:name=".ExemploTableLayoutActivity"></activity>
     </application>
 
 </manifest>
