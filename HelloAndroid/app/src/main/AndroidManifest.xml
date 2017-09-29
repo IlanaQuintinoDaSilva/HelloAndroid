@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".DebugActivity" />
         <activity android:name=".BemVindoActivity" />
-        <activity android:name=".ExemploLinearLayoutPesoActivity"></activity>
+        <activity android:name=".ExemploLinearLayoutPesoActivity" />
+        <activity android:name=".ExemploLinearLayoutPeso2Activity"></activity>
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@ class MainActivity : DebugActivity() {
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.title = "Olá Action Bar"
+        supportActionBar?.title = "Hello Android"
 
         val btLogin = findViewById<Button>(R.id.btLogin)
         //Adiciona o evento no botão de login
