@@ -12,5 +12,6 @@
         android:id="@+id/btExLinearLayoutPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Exemplo LinearLayout Peso"
         android:layout_gravity="center"/>
 </LinearLayout>
