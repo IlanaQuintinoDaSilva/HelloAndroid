@@ -21,7 +21,8 @@
         <activity android:name=".ExemploLinearLayoutPesoActivity" />
         <activity android:name=".ExemploLinearLayoutPeso2Activity" />
         <activity android:name=".FrameLayoutProgressBarActivity" />
-        <activity android:name=".ExemploTableLayoutActivity"></activity>
+        <activity android:name=".ExemploTableLayoutActivity" />
+        <activity android:name=".ExemploRelativeLayoutActivity"></activity>
     </application>
 
 </manifest>
