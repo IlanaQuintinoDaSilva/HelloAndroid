@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DebugActivity" />
-        <activity android:name=".BemVindoActivity"></activity>
+        <activity android:name=".BemVindoActivity" />
+        <activity android:name=".ExemploLinearLayoutPesoActivity"></activity>
     </application>
 
 </manifest>

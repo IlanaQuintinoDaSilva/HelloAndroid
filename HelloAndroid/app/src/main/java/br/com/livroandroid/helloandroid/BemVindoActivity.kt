@@ -1,24 +1,34 @@
 package br.com.livroandroid.helloandroid
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.TextView
 import br.com.livroandroid.helloandroid.DebugActivity
+import br.com.livroandroid.helloandroid.extensions.getTextString
+import br.com.livroandroid.helloandroid.extensions.onClick
+import br.com.livroandroid.helloandroid.extensions.toast
 
 class BemVindoActivity : DebugActivity() {
+    //Propriedade para acessar o contexto de qualquer lugar
+    private val context: Context get() = this
 
     override fun onCreate(icicle: Bundle?) {
         super.onCreate(icicle)
         //Views
         setContentView(R.layout.activity_bem_vindo)
         val textview = findViewById<TextView>(R.id.text)
-        //Args
-        val args = intent.extras
-        val nome = args.getString("nome")
+        //Recupera parâmetro da tela anterior.
+        val nome = intent.getStringExtra("nome")
         textview.text = "$nome, seja bem vindo."
         //Ativa o "up navigation" na action bar
         //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val btExLinearLayoutPeso = findViewById<Button>(R.id.btExLinearLayoutPeso)
+        //Adiciona o evento no botão de login
+        onClick(R.id.btExLinearLayoutPeso){onClickExLinearLayoutPeso()}
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -28,5 +38,10 @@ class BemVindoActivity : DebugActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun onClickExLinearLayoutPeso(){
+        val intent = Intent(context, ExemploLinearLayoutPesoActivity::class.java)
+        startActivity(intent)
     }
 }
