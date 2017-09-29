@@ -27,5 +27,11 @@
         android:layout_height="wrap_content"
         android:text="Exemplo LinearLayout Peso 2"
         android:layout_gravity="center"/>
+        <Button
+        android:id="@+id/btFrameLayoutProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frame Layout ProgressBar"
+        android:layout_gravity="center"/>
     </LinearLayout>
 </LinearLayout>

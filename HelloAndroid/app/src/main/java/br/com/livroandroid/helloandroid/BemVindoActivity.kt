@@ -36,6 +36,7 @@ class BemVindoActivity : DebugActivity() {
         //Adiciona o evento no botão de login
         onClick(R.id.btExLinearLayoutPeso){onClickExLinearLayoutPeso()}
         onClick(R.id.btExLinearLayoutPeso2){onClickExLinearLayoutPeso2()}
+        onClick(R.id.btFrameLayoutProgressBar){onClickFrameLayoutProgressBar()}
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -51,8 +52,14 @@ class BemVindoActivity : DebugActivity() {
         val intent = Intent(context, ExemploLinearLayoutPesoActivity::class.java)
         startActivity(intent)
     }
+
     fun onClickExLinearLayoutPeso2(){
         val intent = Intent(context, ExemploLinearLayoutPeso2Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickFrameLayoutProgressBar(){
+        val intent = Intent(context, FrameLayoutProgressBarActivity::class.java)
         startActivity(intent)
     }
 }
