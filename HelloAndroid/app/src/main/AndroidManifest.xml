@@ -23,7 +23,8 @@
         <activity android:name=".FrameLayoutProgressBarActivity" />
         <activity android:name=".ExemploTableLayoutActivity" />
         <activity android:name=".ExemploRelativeLayoutActivity" />
-        <activity android:name=".LinearLayoutLoginAninhadoActivity"></activity>
+        <activity android:name=".LinearLayoutLoginAninhadoActivity" />
+        <activity android:name=".ExemploScrollViewActivity"></activity>
     </application>
 
 </manifest>
