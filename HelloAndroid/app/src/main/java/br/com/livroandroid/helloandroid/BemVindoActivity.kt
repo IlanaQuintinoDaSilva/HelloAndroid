@@ -41,6 +41,7 @@ class BemVindoActivity : DebugActivity() {
         onClick(R.id.btExReLayout){onClickExRelativeLayout()}
         onClick(R.id.btLinearLayoutLoginAninhado){onClickLinearLayoutLoginAninhado()}
         onClick(R.id.btScrollView){onClickScrollView()}
+        onClick(R.id.btExViews){onClickExViews()}
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
@@ -83,6 +84,11 @@ class BemVindoActivity : DebugActivity() {
     }
     fun onClickScrollView(){
         val intent = Intent(context, ExemploScrollViewActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun onClickExViews(){
+        val intent = Intent(context, ExemploViewsActivity::class.java)
         startActivity(intent)
     }
 }

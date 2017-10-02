@@ -24,7 +24,8 @@
         <activity android:name=".ExemploTableLayoutActivity" />
         <activity android:name=".ExemploRelativeLayoutActivity" />
         <activity android:name=".LinearLayoutLoginAninhadoActivity" />
-        <activity android:name=".ExemploScrollViewActivity"></activity>
+        <activity android:name=".ExemploScrollViewActivity" />
+        <activity android:name=".ExemploViewsActivity"></activity>
     </application>
 
 </manifest>
