@@ -2,19 +2,18 @@ package br.com.livroandroid.carros.activity
 
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
 import android.view.View
+import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.widget.ProgressBar
 import br.com.livroandroid.carros.R
+import br.com.livroandroid.carros.activity.dialogs.AboutDialog
 import br.com.livroandroid.carros.extensions.setupToolbar
+import kotlinx.android.synthetic.main.activity_site_livro.*
+import kotlinx.android.synthetic.main.progress.*
 
 class SiteLivroActivity : BaseActivity() {
     private val URL_SOBRE = "http://www.livroandroid.com.br/sobre.htm"
-    var webview: WebView? = null
-    var progress: ProgressBar? = null
-    var swipeToRefresh: SwipeRefreshLayout? = null
 
     override fun onCreate(icicle: Bundle?) {
         super.onCreate(icicle)
@@ -22,16 +21,12 @@ class SiteLivroActivity : BaseActivity() {
         //Toolbar
         val actionBar = setupToolbar(R.id.toolbar)
         actionBar.setDisplayHomeAsUpEnabled(true)
-        //Views
-        webview = findViewById<WebView>(R.id.webview)
-        progress = findViewById<ProgressBar>(R.id.progress)
         //Carrega a página
         setWebViewClient(webview)
-        webview?.loadUrl(URL_SOBRE)
+        webview.loadUrl(URL_SOBRE)
         //Swipe to Refresh
-        swipeToRefresh = findViewById<SwipeRefreshLayout>(R.id.swipeToRefresh)
-        swipeToRefresh?.setOnRefreshListener {
-            webview?.reload()
+        swipeToRefresh.setOnRefreshListener {
+            webview.reload()
         }
         //Cores da animação
         swipeToRefresh?.setColorSchemeResources(
@@ -40,8 +35,8 @@ class SiteLivroActivity : BaseActivity() {
                 R.color.refresh_progress_3)
     }
     //Controla os eventos do WebView
-    private fun setWebViewClient(webview: WebView?){
-        webview?.webViewClient = object : WebViewClient(){
+    private fun setWebViewClient(webview: WebView){
+        webview.setWebViewClient (object : WebViewClient(){
             override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
                 //Liga o progress
@@ -54,6 +49,17 @@ class SiteLivroActivity : BaseActivity() {
                 //Termina a animação do Swipe to Refresh
                 swipeToRefresh?.isRefreshing = false
             }
-        }
+
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                val url = request?.url.toString()
+                if (url.endsWith("sobre.htm")){
+                    //Mostra o dialog
+                    AboutDialog.showAbout(supportFragmentManager)
+                    //Retorna true para informar que interceptamos o evento
+                    return true
+                }
+                return super.shouldOverrideUrlLoading(view, request)
+            }
+        })
     }
 }
